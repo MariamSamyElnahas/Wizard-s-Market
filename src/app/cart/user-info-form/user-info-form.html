@@ -1,0 +1,135 @@
+<section class="wizardProfile">
+     @if (showMessage()) {
+    <div class="cartMessage" [class.leaving]="messageLeaving()">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+        <span>
+            Wizard information updated successfully!
+        </span>
+    </div>
+}
+    <h1 class="welcomeTitle">
+        Welcome, <span>{{ wizard.name }}</span>
+    </h1>
+
+    <div class="profileHeader">
+        <h2>Wizard Information</h2>
+
+        <p>
+            Your magical identity registered at the Ministry of Magic.
+        </p>
+    </div>
+
+
+    <div class="wizardInfoCard">
+
+        <form >
+
+            <!-- Wizard Name -->
+
+            <div class="wizardField">
+
+                <label for="nameInfo">
+                    Wizard Name
+                </label>
+
+                <input
+                    type="text"
+                    id="nameInfo"
+                    name="name"
+                    placeholder="Harry Potter"
+                    [(ngModel)]="wizard.name"
+                >
+
+            </div>
+
+
+            <!-- Email -->
+
+            <div class="wizardField">
+
+                <label for="emailInfo">
+                    Owl Mail
+                </label>
+
+                <input
+                    type="email"
+                    id="emailInfo"
+                    name="email"
+                    placeholder="wizard@hogwarts.com"
+                    [(ngModel)]="wizard.email"
+                >
+
+            </div>
+
+
+            <!-- Password -->
+
+            <div class="wizardField">
+
+                <label for="wizardPassword">
+                    Magical Password
+                </label>
+
+                <input
+                    type="password"
+                    id="wizardPassword"
+                    name="password"
+                    placeholder="Your Magical Password"
+                    [(ngModel)]="wizard.password"
+                >
+
+            </div>
+
+
+            <!-- House -->
+
+            <div class="wizardField">
+
+                <label for="houseInfo">
+                    House
+                </label>
+
+                <select
+                    id="houseInfo"
+                    name="house"
+                    [(ngModel)]="wizard.house"
+                >
+                    <option value="" disabled> 
+                        Choose your house
+                    </option>
+
+                    <option value="Gryffindor">
+                        Gryffindor
+                    </option>
+
+                    <option value="Slytherin">
+                        Slytherin
+                    </option>
+
+                    <option value="Ravenclaw">
+                        Ravenclaw
+                    </option>
+
+                    <option value="Hufflepuff">
+                        Hufflepuff
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="saveWizardBtn"
+                (click)="saveWizard()"
+            >
+                EDIT
+            </button>
+
+        </form>
+
+    </div>
+
+</section>

@@ -1,0 +1,123 @@
+<section class="loginPage">
+
+    <div class="loginCard">
+
+        <div class="loginIcon">
+            ✦
+        </div>
+
+        <h1>Enter Diagon Alley</h1>
+
+        <p class="subtitle">
+            Welcome, young wizard
+        </p>
+
+        <div class="divider">
+            <span>✦</span>
+        </div>
+
+        <form #wizardForm="ngForm" (ngSubmit)="enterDiagonAlley()">
+
+            <div class="inputGroup">
+
+                <label for="wizardName">
+                    Wizard Name
+                </label>
+
+                <input type="text" id="name" name="name" [(ngModel)]="wizard.name" placeholder="Harry Potter" required
+                    #name="ngModel" (blur)="name.control.markAsTouched()">
+                @if(name.invalid && name.touched){
+                <p class="text-danger pError">
+                    Please enter your name
+                </p>
+                }
+
+            </div>
+
+
+            <div class="inputGroup">
+
+                <label for="wizardEmail">
+                    Owl Post Address
+                </label>
+
+                <input type="email" id="wizardEmail" name="wizardEmail" [(ngModel)]="wizard.email"
+                    placeholder="wizard@hogwarts.com" required #email="ngModel" (blur)="email.control.markAsTouched()">
+                @if(email.invalid && email.touched){
+                <p class="text-danger pError">
+                    Please enter a valid email
+                </p>}
+
+            </div>
+
+
+            <div class="inputGroup">
+
+                <label for="wizardPassword">
+                    Magical Password
+                </label>
+
+                <input type="password" id="wizardPassword" name="wizardPassword" [(ngModel)]="wizard.password"
+                    placeholder="Your magical password" required minlength="6" #password="ngModel"
+                    (blur)="password.control.markAsTouched()">
+                @if(password.invalid && password.touched){
+                <p class="text-danger pError">
+                    password must consist of at least 6 characters.
+                </p>
+                }
+
+            </div>
+
+
+            <div class="inputGroup">
+
+                <label for="wizardHouse">
+                    Hogwarts House
+                </label>
+
+                <select id="wizardHouse" name="wizardHouse" [(ngModel)]="wizard.house" required #house="ngModel"
+                    (blur)="house.control.markAsTouched()">
+
+                    <option value="" disabled>
+                        Choose your house
+                    </option>
+
+                    <option value="Gryffindor">
+                        Gryffindor
+                    </option>
+
+                    <option value="Slytherin">
+                        Slytherin
+                    </option>
+
+                    <option value="Ravenclaw">
+                        Ravenclaw
+                    </option>
+
+                    <option value="Hufflepuff">
+                        Hufflepuff
+                    </option>
+
+                </select>
+                @if(house.invalid && house.touched) {
+                <p class="text-danger pError">
+                    Please choose your house
+                </p>
+                }
+
+            </div>
+
+
+            <button type="submit" [disabled]="wizardForm.invalid">
+                Enter Diagon Alley
+            </button>
+
+        </form>
+
+        <p class="bottomText">
+            Your magical journey begins here
+        </p>
+
+    </div>
+
+</section>

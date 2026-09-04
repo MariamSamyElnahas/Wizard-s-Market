@@ -1,0 +1,205 @@
+.wizardProfile {
+    width: 100%;
+    padding: 30px 8%;
+
+}
+
+.welcomeTitle {
+
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 18px;
+    font-weight: 800;
+    text-shadow:
+        0 0 15px rgba(212, 175, 55, .3);
+
+}
+
+.welcomeTitle span {
+
+    color: #fff;
+
+}
+
+.profileHeader {
+
+    text-align: center;
+    margin-bottom: 45px;
+
+}
+
+.profileHeader h2 {
+
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    font-size: 2rem;
+    margin-bottom: 12px;
+    font-weight: 800;
+
+}
+
+.profileHeader p {
+
+    width: 60%;
+    margin: auto;
+    color: var(--gray);
+    line-height: 1.8;
+
+}
+
+.wizardInfoCard {
+    width: 650px;
+    max-width: 100%;
+    margin: auto;
+    padding: 45px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, .05);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(212, 175, 55, .25);
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, .45);
+    transition: .4s;
+}
+
+.wizardInfoCard:hover {
+    box-shadow:
+        0 20px 50px rgba(212, 175, 55, .15);
+}
+
+.wizardField {
+    margin-bottom: 28px;
+}
+
+.wizardField label {
+    display: block;
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.wizardField input,
+.wizardField select {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(212, 175, 55, .25);
+    background: rgba(255, 255, 255, .05);
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: .35s;
+}
+.wizardField select{
+    cursor: pointer;
+}
+.wizardField input::placeholder {
+    color: rgba(255, 255, 255, .4);
+
+}
+
+.wizardField input:focus {
+    border-color: var(--gold);
+    box-shadow:
+        0 0 15px rgba(212, 175, 55, .3);
+}
+
+.saveWizardBtn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #D4AF37, #F4D35E);
+    color: #111;
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: .35s;
+}
+
+.saveWizardBtn:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 0 25px rgba(212, 175, 55, .4);
+}
+
+.infoContainer {
+    margin-top: 0px;
+    margin: 50px auto 0;
+}
+
+select:focus {
+    outline: none;
+    border-bottom-color: #D4AF37;
+}
+ select option {
+
+    color: #38220f;
+
+}
+.cartMessage {
+    position: fixed;
+    top: 90px;
+    right: 10px;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px 20px;
+
+    background: rgba(20, 25, 35, 0.95);
+    color: #f5e6b3;
+
+    border: 1px solid rgba(212, 175, 55, 0.6);
+    border-left: 4px solid #d4af37;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.35),
+        0 0 15px rgba(212, 175, 55, 0.12);
+
+    font-size: 14px;
+    font-weight: 500;
+
+    animation: slideIn 0.35s ease-out;
+    transition: opacity 0.5s ease, transform 0.3s ease;
+}
+
+.cartMessage i {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(212, 175, 55, 0.15);
+    color: #d4af37;
+
+    border-radius: 50%;
+
+    font-size: 13px;
+}
+
+.cartMessage.leaving {
+    opacity: 0;
+    transform: translateY(-10px); 
+}
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

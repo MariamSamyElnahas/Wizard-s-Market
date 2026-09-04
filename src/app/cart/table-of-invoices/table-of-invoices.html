@@ -1,0 +1,119 @@
+<section class="profileSec">
+
+    @if (showMessage()) {
+        <div class="cartMessage" [class.leaving]="messageLeaving()">
+            <i class="fa-solid fa-trash"></i>
+            <span>Product removed from cart successfully!</span>
+        </div>
+    }
+
+    <div class="orderHeader container-fluid px-3 px-md-4 px-lg-5">
+
+        <h2>Diagon Alley Purchases</h2>
+
+        <p>Your magical purchases from Diagon Alley.</p>
+
+    </div>
+
+    <div class="table-responsive mx-auto px-2 px-md-0">
+        <table class="itemsData">
+
+            <thead class="head" id="head">
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>CATEGORY</th>
+                    <th>PRICE</th>
+                    <th>QTY</th>
+                    <th>TOTAL</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+
+            <tbody class="itemBody" id="itemBody">
+
+                @for (item of cart; track item.product.id) {
+
+                    <tr>
+
+                        <td>{{ item.product.id }}</td>
+
+                        <td>{{ item.product.name }}</td>
+
+                        <td>{{ item.product.category }}</td>
+
+                        <td>{{ item.product.price }} Galleons</td>
+
+                        <td>{{ item.quantity }}</td>
+
+                        <td>
+                            {{ item.product.price * item.quantity }} Galleons
+                        </td>
+
+                        <td>
+                            <button
+                                class="deleteBtn"
+                                (click)="deleteProduct(item.product.id)"
+                            >
+                                Delete
+                            </button>
+                        </td>
+
+                    </tr>
+
+                }
+
+            </tbody>
+
+        </table>
+    </div>
+
+    <div class="orderSummary container-fluid px-3 px-md-4 px-lg-5">
+
+        <h3>
+            Total:
+            <span id="orderTotal">{{ total }} Galleons</span>
+        </h3>
+
+        <button
+            id="confirmOrder"
+            class="confirmOrderBtn"
+            (click)="confirmMessage()"
+            [disabled]="cart.length === 0"
+        >
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            Confirm Order
+        </button>
+
+    </div>
+
+    @if(showConfMessage) {
+
+        <div id="orderConMes" class="orderConMes">
+
+            <div class="confirmBox">
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                <h2>Order Confirmed!</h2>
+
+                <p>
+                    Your magical order has been received by
+                    <strong>Diagon Alley</strong>.
+                </p>
+
+                <p>
+                    An owl is already on its way to deliver your items.
+                </p>
+
+                <button id="closeMsg" routerLink="/home">
+                    Continue Shopping
+                </button>
+
+            </div>
+
+        </div>
+
+    }
+
+</section>

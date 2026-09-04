@@ -1,0 +1,154 @@
+footer {
+    margin-top: 50px;
+    background-color: var(--footer);
+    border-top: 1px solid #d4af3783;
+    padding: 60px 0 25px;
+}
+
+.footerCol {
+    padding: 0 20px;
+}
+
+.footerCol:not(:last-child) {
+    border-right: 1px solid rgba(212, 175, 55, .18);
+}
+
+.footerCol h2,
+.footerCol h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.footerCol h2 {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.footerCol p {
+    color: var(--gray);
+    line-height: 1.8;
+    font-size: .95rem;
+}
+
+.footerCol ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.footerCol ul li {
+    margin-bottom: 15px;
+    color: var(--gray);
+}
+
+.footerCol ul li a {
+    text-decoration: none;
+    color: var(--gray);
+    transition: .3s;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.footerCol ul li a:hover {
+    color: var(--gold);
+    padding-left: 8px;
+}
+
+.socialIcons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.socialIcons a {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--gold);
+    border: 1px solid rgba(212, 175, 55, .35);
+    transition: .35s;
+}
+
+.socialIcons a:hover {
+    background: var(--gold);
+    color: #09111f;
+    transform: translateY(-5px);
+}
+
+footer hr {
+    margin: 40px 0 25px;
+    border: none;
+    height: 1px;
+    background: rgba(212, 175, 55, .18);
+}
+
+.copyright {
+    text-align: center;
+    color: #aeb3bf;
+    font-size: .9rem;
+    letter-spacing: 1px;
+}
+
+/* Tablet & Mobile */
+@media (max-width: 991.98px) {
+
+    .footerCol:not(:last-child) {
+        border-right: none;
+    }
+
+    .footerCol {
+        border-bottom: 1px solid rgba(212, 175, 55, .12);
+        padding-bottom: 25px;
+    }
+
+    .footerCol:nth-last-child(-n + 2) {
+        border-bottom: none;
+    }
+}
+
+/* Mobile */
+@media (max-width: 575.98px) {
+
+    footer {
+        margin-top: 150px;
+        padding: 45px 0 20px;
+    }
+
+    .footerCol {
+        padding: 0 10px 25px;
+    }
+
+    .footerCol h2 {
+        font-size: 21px;
+    }
+
+    .footerCol h3 {
+        font-size: 18px;
+    }
+
+    .footerCol p {
+        font-size: .9rem;
+    }
+
+    .footerCol ul li a,
+    .footerCol ul li {
+        font-size: 15px;
+    }
+
+    .socialIcons {
+        gap: 12px;
+    }
+
+    .copyright {
+        font-size: .8rem;
+    }
+}

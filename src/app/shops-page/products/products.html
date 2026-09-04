@@ -1,0 +1,73 @@
+<section class="shopping">
+    @if (showMessage()) {
+    <div class="cartMessage" [class.leaving]="messageLeaving()">
+        <i class="fa-solid fa-check"></i>
+        <span>Product added to cart successfully!</span>
+    </div>
+    }
+
+    @if (isSearching && products.length === 0) {
+
+    <app-no-result></app-no-result>
+
+    }
+    @else{
+    <!-- Shop Header -->
+    <div class="shopHeader">
+
+        <h1 id="shopTitle">
+            {{ shopName }}
+        </h1>
+
+    </div>
+
+    <!-- Products -->
+    <div class="itemCards">
+
+        @for (product of products; track product.id) {
+
+        <div class="itemCard">
+
+            <img [src]="product.image" [alt]="product.name">
+
+            <div class="cardInfo">
+
+                <h2 class="itemName">
+                    {{ product.name }}
+                </h2>
+
+
+                <p class="price">
+                    {{ product.price }} Galleons
+                </p>
+
+                <div class="cardBottom">
+
+                    <div class="quantity">
+
+                        <button (click)="decreaseQuantity(product)">-</button>
+
+                        <span class="count">
+                            {{ quantities[product.id] || 1 }}
+                        </span>
+
+                        <button (click)="increaseQuantity(product)">+</button>
+
+                    </div>
+
+                    <button class="addBtn" (click)="addToCart(product)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        }
+
+    </div>
+    }
+
+</section>
