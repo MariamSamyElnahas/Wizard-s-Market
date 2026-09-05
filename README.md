@@ -1,8 +1,8 @@
 # Wizard-s-Market
 A magical e-commerce website inspired by Diagon Alley from Harry Potter, built with Angular, featuring a fantasy-themed UI, product browsing, a shopping cart, and an interactive user experience.
-
-
-
+<br>
+<br>
+<br>
 
 <img width="1356" height="3205" alt="Home" src="https://github.com/user-attachments/assets/4b70c1a0-0b81-4a42-b752-93b0815681fc" />
 
